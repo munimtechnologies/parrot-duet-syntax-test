@@ -129,4 +129,70 @@ small corpus; the calibration says how much it can detect. No acoustics are re-a
 
 ## Amendments
 
-(none yet)
+### AMENDMENT-1 (2026-11-22 UTC, before any analysis code was run on the data)
+
+Written after one of our agents read the authors' sheet (converted to CSV) and the paper (Methods,
+Results, Table 1, Figures 1-5), and before any code computed any statistic of the data.
+
+**Data received.** A person-operated browser saved the Dryad files on 2026-11-22.
+`Supplement_Data_DRYAD.xlsx` has sha256
+bf21a76da9f06a8c1ba02c0bcef608f2301e82b07c20c5f8ad445de86679db8b (65,456 bytes), which matches the
+registration. It has one sheet ('Sheet1') with 468 call rows below a header. `data/dryad_sheet01.csv`
+is that sheet written row by row (openpyxl reading the cell values, standard-library `csv`
+writing them, no other change; the job re-checks it against the xlsx when it can). The
+sheet holds 52 duets (52 rows with Note # 1) and 13 pair codes: RC, A1, CD17, FW, RW, U, BC, LP,
+AG, CD23, CD10, CD8 and UB. The paper's lexicon used 469 calls from 54 duets of 13 pairs. Its syntax
+analysis used "52 duets from 12 pairs", which matches this file if code U is not a pair.
+
+**Converter mapping (fixes rules i-v).** duet = 'Duet Name' with surrounding whitespace removed
+(several names end in spaces). pos = 'Note #'. sex = 'Sex (M,F,U)'; U stays unassigned.
+type = 'Call Type' with surrounding whitespace removed and inner whitespace collapsed ('Z ' and 'Z'
+are one type). The label 'Unknown' becomes blank: it is the authors' bin for 11 call types heard
+only once. 'U1' and 'U2' stay as types, because the paper treats them as call types (Fig. 3,
+Table 1). No other label is changed. pair = 'Pair', except that code 'U' is read as an
+unidentified pair and becomes blank, so each U duet forms its own pair group. A sensitivity run
+keeps 'U' as one pair. It is reported beside the primary but cannot change the headline. Rows with
+NA acoustic measurements keep their slot and label. The converter reports, and never repairs, any
+duet that is not contiguous or whose notes do not run 1, 2, 3, ...
+
+**Code pinned.** The primaries run with `syntax_test.py` exactly as committed in
+88b350b7e2dfeeee09d89a4b93127e00bad5f9c8. The job downloads that file by commit hash.
+
+**New secondary analyses (T, R1, R2), added after reading Table 1 and before computing anything
+on the data.** This is what we saw in the published numbers alone. Table 1 gives Pearson r and p
+for the 19 positive and 4 negative "collocates" behind the reported rules. Every p equals the
+two-sided p of its r with exactly n = 10 observations (df = 8). For example, r = -0.635 gives
+p = 0.049 only at n = 10; at n = 12 it gives 0.027, and at 52 it is far smaller. Ten is neither
+the number of duets (52) nor the number of pairs (12). It matches Voyant's default of 10 equal
+segments ('bins') per document. If so, the significance comes from correlating call-type
+frequencies across 10 chunks of the whole data set, which does not involve call order at all.
+Also, 8 of the 19 positive rows pair a call type with itself, where r = 1 by definition.
+`voyant_check.py` (tested in `test_voyant_check.py`) checks this:
+
+- **T (published numbers only):** which n from 3 to 100 make all 23 published p values match
+  their r (allowing for 3-decimal rounding of r and p). Prediction: only n = 10.
+- **R1 reproduction:** the calls in file order form one text (label without spaces is the
+  token). The text is split into 10 equal-length bins (token i goes to bin floor(10 i / N)), and
+  r is the Pearson correlation of the per-bin frequencies. There are four variants: 'Unknown'
+  tokens kept or removed, crossed with raw counts or relative frequencies. We compare with
+  Table 1 on the 15 rows that pair two different types. The best variant is the one with the
+  smallest median |r difference|. Reading: REPRODUCED if that median is at most 0.05,
+  PARTLY_REPRODUCED if at most 0.20, otherwise NOT_REPRODUCED. We also report how many of the 57
+  published context counts (k = 1, 3, 5) are matched exactly under eight counting variants:
+  tokens with or without 'Unknown', following only or both sides, and across or only within
+  duets.
+- **R2a order blindness (best R1 variant):** 999 shuffles of call order inside every duet, with
+  the duets left in place. Take each different-type Table 1 pair that is significant with the
+  published sign in file order. Its persistence is the share of shuffles in which it stays
+  significant with that sign. Reading: ORDER_BLIND if mean persistence >= 0.80, else
+  ORDER_SENSITIVE (NOT_APPLICABLE if no such pair).
+- **R2b placement:** 999 random orders of whole duets (each keeps its own call order). A 'rule'
+  is an unordered pair of types, each with >= 5 tokens, whose bin correlation has p < 0.05 at
+  n = 10. We compare the number of rules in file order with this null:
+  p_place = (1 + #{null >= observed}) / 1000. Reading: CHANCE_LEVEL if p_place >= 0.05, else
+  EXCESS_AT_BIN_SCALE. We also report how often the Table 1 pairs stay significant.
+- Priors: Q1 REPRODUCED 0.45, Q2 ORDER_BLIND 0.90, Q3 CHANCE_LEVEL 0.55 (Brier-graded).
+  Seed 20261122.
+
+These analyses are secondary. The primaries A and B, their nulls, alpha, the calibration, the
+headline rules and the priors P1-P8 above are unchanged.
