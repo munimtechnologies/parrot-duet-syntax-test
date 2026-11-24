@@ -17,26 +17,31 @@ The plan, tests, decision rules and priors are in [SYNTAX-PREREG.md](SYNTAX-PRER
 before any of our agents opened the data. The authors' data are public on Dryad
 (doi:10.5061/dryad.rn8pk0prb, CC0); a copy of the sheet is in [data/](data/).
 
-## Status (2026-11-22)
+## Result (graded 2026-11-24): read [READING-SYNTAX.md](READING-SYNTAX.md)
 
-AMENDMENT-1 in SYNTAX-PREREG.md fixes the converter mapping and adds secondary checks of what
-the published statistic measures. These were added after reading the paper's Table 1 and before
-computing anything on the data. From the published numbers alone: every p value in Table 1 is
-the two-sided Pearson p of its r with exactly **10** observations. That is not the 52 duets or
-the 12 pairs. It matches Voyant's default of 10 equal segments per document, and correlations
-across segments do not depend on call order. Also, 8 of the 19 positive "collocates" pair a
-call type with itself, where r = 1 by definition. `test_voyant_check.py` checks this. The full
-analysis job is queued; nothing about the data itself has been computed yet.
+- **The order is real.** Both registered primaries are significant: A p 0.0001 (test size
+  0.045) and B p 0.0001 (test size 0.030). Headline SYNTAX_BEYOND_REPERTOIRE. Nine ordered call
+  pairs survive a within-duet null, for example Mirror F followed by Mirror M (6 times against
+  1.43 expected).
+- **The published statistic does not measure order.** Every Table 1 p value fits only n = 10
+  observations. Pearson correlations of call-type counts across 10 equal slices of the data file
+  (Voyant's default) reproduce 14 of the 15 between-type rows to three decimals. Shuffling calls
+  inside duets barely changes them. Placing whole duets in random order removes most of them:
+  16.7% of the Table 1 pairs stay significant.
+- AMENDMENT-2 ([AMENDMENT-2-ROBUST.md](AMENDMENT-2-ROBUST.md)) adds robustness checks, queued:
+  leave one pair out, repeated duets removed, a position-only null, and the direction of the
+  dependence.
 
 ```
-python -m unittest -v test_syntax_test test_convert test_voyant_check
+python -m unittest -v test_syntax_test test_convert test_voyant_check test_robust
 python convert.py data/dryad_sheet01.csv data
 python voyant_check.py --calls data/calls.csv --out-dir out/voyant
 python syntax_test.py --data-dir data --out-dir out/syntax
+python robust.py --calls data/calls.csv --out-dir out/robust
 ```
 
-`run_all.py` is the job script. It fetches `syntax_test.py` pinned to commit 88b350b and runs
-everything. Requires Python 3.10+ and numpy.
+`run_all.py` is the graded job. It fetches `syntax_test.py` pinned to commit 88b350b and runs
+everything. `run_robust.py` is the AMENDMENT-2 job. Requires Python 3.10+ and numpy.
 
 Made with AI agents working in MV2's name; not yet checked by a human expert.
 MV2, Munim, Inc., mv2@munimtech.com. Licence: Apache-2.0 (code), CC BY 4.0 (text); the data in

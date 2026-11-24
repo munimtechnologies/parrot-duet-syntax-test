@@ -1,0 +1,213 @@
+{
+ "n_calls": 468,
+ "n_duets": 52,
+ "n_unknown": 11,
+ "pairs": [
+  "",
+  "A1",
+  "AG",
+  "BC",
+  "CD10",
+  "CD17",
+  "CD23",
+  "CD8",
+  "FW",
+  "LP",
+  "RC",
+  "RW",
+  "UB"
+ ],
+ "n_types": 36,
+ "labels_not_in_fig3": [],
+ "fig3_match_all": 34,
+ "fig3_match_sexed": 24,
+ "fig3": {
+  "alien": {
+   "paper": 6,
+   "all": 6,
+   "sexed": 6
+  },
+  "ha": {
+   "paper": 5,
+   "all": 5,
+   "sexed": 5
+  },
+  "mirrorm": {
+   "paper": 15,
+   "all": 15,
+   "sexed": 15
+  },
+  "nert": {
+   "paper": 4,
+   "all": 4,
+   "sexed": 4
+  },
+  "q": {
+   "paper": 7,
+   "all": 7,
+   "sexed": 7
+  },
+  "yoohoo": {
+   "paper": 11,
+   "all": 11,
+   "sexed": 11
+  },
+  "x": {
+   "paper": 5,
+   "all": 5,
+   "sexed": 5
+  },
+  "accordion": {
+   "paper": 8,
+   "all": 8,
+   "sexed": 8
+  },
+  "breeze": {
+   "paper": 7,
+   "all": 7,
+   "sexed": 7
+  },
+  "u2": {
+   "paper": 10,
+   "all": 10,
+   "sexed": 10
+  },
+  "b": {
+   "paper": 24,
+   "all": 24,
+   "sexed": 21
+  },
+  "jfancy": {
+   "paper": 13,
+   "all": 13,
+   "sexed": 10
+  },
+  "r": {
+   "paper": 18,
+   "all": 18,
+   "sexed": 18
+  },
+  "contactcall": {
+   "paper": 29,
+   "all": 29,
+   "sexed": 23
+  },
+  "dippy": {
+   "paper": 7,
+   "all": 7,
+   "sexed": 7
+  },
+  "hook": {
+   "paper": 7,
+   "all": 7,
+   "sexed": 7
+  },
+  "julia": {
+   "paper": 24,
+   "all": 24,
+   "sexed": 24
+  },
+  "zert": {
+   "paper": 4,
+   "all": 4,
+   "sexed": 4
+  },
+  "d": {
+   "paper": 33,
+   "all": 33,
+   "sexed": 32
+  },
+  "k": {
+   "paper": 14,
+   "all": 14,
+   "sexed": 13
+  },
+  "c": {
+   "paper": 27,
+   "all": 27,
+   "sexed": 26
+  },
+  "p": {
+   "paper": 7,
+   "all": 7,
+   "sexed": 6
+  },
+  "m": {
+   "paper": 24,
+   "all": 22,
+   "sexed": 21
+  },
+  "f": {
+   "paper": 8,
+   "all": 8,
+   "sexed": 8
+  },
+  "christine": {
+   "paper": 8,
+   "all": 6,
+   "sexed": 6
+  },
+  "j": {
+   "paper": 15,
+   "all": 15,
+   "sexed": 15
+  },
+  "o": {
+   "paper": 17,
+   "all": 17,
+   "sexed": 17
+  },
+  "z": {
+   "paper": 15,
+   "all": 15,
+   "sexed": 15
+  },
+  "u1": {
+   "paper": 10,
+   "all": 10,
+   "sexed": 9
+  },
+  "sauron": {
+   "paper": 6,
+   "all": 6,
+   "sexed": 6
+  },
+  "scree": {
+   "paper": 41,
+   "all": 41,
+   "sexed": 41
+  },
+  "n": {
+   "paper": 7,
+   "all": 7,
+   "sexed": 6
+  },
+  "flert": {
+   "paper": 5,
+   "all": 5,
+   "sexed": 5
+  },
+  "hoo": {
+   "paper": 6,
+   "all": 6,
+   "sexed": 6
+  },
+  "mirrorf": {
+   "paper": 6,
+   "all": 6,
+   "sexed": 6
+  },
+  "shortcontactcall": {
+   "paper": 8,
+   "all": 8,
+   "sexed": 7
+  }
+ },
+ "sex_counts": {
+  "F": 237,
+  "M": 210,
+  "U": 21
+ },
+ "input_sha256": "e86807d2c7cfd48bf7a4610274e545d62c726e92797c4956d4fee2141d0e03be",
+ "anomalies": []
+}
