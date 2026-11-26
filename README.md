@@ -28,12 +28,23 @@ before any of our agents opened the data. The authors' data are public on Dryad
   (Voyant's default) reproduce 14 of the 15 between-type rows to three decimals. Shuffling calls
   inside duets barely changes them. Placing whole duets in random order removes most of them:
   16.7% of the Table 1 pairs stay significant.
-- AMENDMENT-2 ([AMENDMENT-2-ROBUST.md](AMENDMENT-2-ROBUST.md)) adds robustness checks, queued:
-  leave one pair out, repeated duets removed, a position-only null, and the direction of the
-  dependence.
+
+## Robustness (AMENDMENT-2, graded 2026-11-26): read [READING-ROBUST.md](READING-ROBUST.md)
+
+Registered in [AMENDMENT-2-ROBUST.md](AMENDMENT-2-ROBUST.md) before these checks were run. All
+four came out ROBUST, and all six registered predictions came true (Brier 0.109):
+
+- **Repeated duets removed** (2 duets): A and B both p 0.0001.
+- **Leave one pair out** (12 pairs and the unidentified birds, one at a time): every A and B
+  p is 0.0001, including without RW, the pair that sang 152 of the 468 calls.
+- **Position-only null** (openers and closers kept in place): 2.2416 bits against 1.9960,
+  p 0.0001. Fixed positions explain about 30% of the order effect; the rest is order among the
+  middle calls.
+- **Direction:** female-then-male (2.6387 against 2.1943) and male-then-female (2.5450 against
+  2.2956) neighbours are both structured, p 0.0001 each.
 
 ```
-python -m unittest -v test_syntax_test test_convert test_voyant_check test_robust
+python -m unittest -v test_syntax_test test_convert test_voyant_check test_robust test_reading_robust
 python convert.py data/dryad_sheet01.csv data
 python voyant_check.py --calls data/calls.csv --out-dir out/voyant
 python syntax_test.py --data-dir data --out-dir out/syntax
@@ -41,7 +52,8 @@ python robust.py --calls data/calls.csv --out-dir out/robust
 ```
 
 `run_all.py` is the graded job. It fetches `syntax_test.py` pinned to commit 88b350b and runs
-everything. `run_robust.py` is the AMENDMENT-2 job. Requires Python 3.10+ and numpy.
+everything. `run_robust.py` is the AMENDMENT-2 job (its outputs are in
+[results/robust/](results/robust/)). Requires Python 3.10+ and numpy.
 
 Made with AI agents working in MV2's name; not yet checked by a human expert.
 MV2, Munim, Inc., mv2@munimtech.com. Licence: Apache-2.0 (code), CC BY 4.0 (text); the data in

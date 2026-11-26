@@ -1,0 +1,189 @@
+{
+ "seed": 20261124,
+ "B": 9999,
+ "alpha": 0.025,
+ "n_duets": 52,
+ "n_calls": 468,
+ "dedup": {
+  "n_duets": 50,
+  "n_calls": 449,
+  "S_win": 1.058170463981438,
+  "p_A": 0.0001,
+  "S_adj": 2.170296405120828,
+  "p_B": 0.0001,
+  "dropped_duets": [
+   "CD23_AH25JAN08PW2",
+   "RW_AH1FEB07AW2"
+  ]
+ },
+ "lopo": [
+  {
+   "n_duets": 48,
+   "n_calls": 434,
+   "S_win": 1.1098716046266972,
+   "p_A": 0.0001,
+   "S_adj": 2.2513191675941733,
+   "p_B": 0.0001,
+   "left_out": "(unidentified)",
+   "n_calls_left_out": 34
+  },
+  {
+   "n_duets": 51,
+   "n_calls": 462,
+   "S_win": 1.0976131270622747,
+   "p_A": 0.0001,
+   "S_adj": 2.2482692303988783,
+   "p_B": 0.0001,
+   "left_out": "A1",
+   "n_calls_left_out": 6
+  },
+  {
+   "n_duets": 48,
+   "n_calls": 429,
+   "S_win": 1.1031796032867462,
+   "p_A": 0.0001,
+   "S_adj": 2.274345080895633,
+   "p_B": 0.0001,
+   "left_out": "AG",
+   "n_calls_left_out": 39
+  },
+  {
+   "n_duets": 50,
+   "n_calls": 453,
+   "S_win": 1.1108849732565749,
+   "p_A": 0.0001,
+   "S_adj": 2.2892139361940216,
+   "p_B": 0.0001,
+   "left_out": "BC",
+   "n_calls_left_out": 15
+  },
+  {
+   "n_duets": 51,
+   "n_calls": 465,
+   "S_win": 1.0962406475013942,
+   "p_A": 0.0001,
+   "S_adj": 2.2534965804317633,
+   "p_B": 0.0001,
+   "left_out": "CD10",
+   "n_calls_left_out": 3
+  },
+  {
+   "n_duets": 49,
+   "n_calls": 442,
+   "S_win": 1.1347089986645973,
+   "p_A": 0.0001,
+   "S_adj": 2.290752020822888,
+   "p_B": 0.0001,
+   "left_out": "CD17",
+   "n_calls_left_out": 26
+  },
+  {
+   "n_duets": 49,
+   "n_calls": 442,
+   "S_win": 1.0254290268113138,
+   "p_A": 0.0001,
+   "S_adj": 2.1476972925592546,
+   "p_B": 0.0001,
+   "left_out": "CD23",
+   "n_calls_left_out": 26
+  },
+  {
+   "n_duets": 49,
+   "n_calls": 449,
+   "S_win": 1.1025111073219331,
+   "p_A": 0.0001,
+   "S_adj": 2.2943722519757115,
+   "p_B": 0.0001,
+   "left_out": "CD8",
+   "n_calls_left_out": 19
+  },
+  {
+   "n_duets": 41,
+   "n_calls": 377,
+   "S_win": 1.1684925156243218,
+   "p_A": 0.0001,
+   "S_adj": 2.4238690880056604,
+   "p_B": 0.0001,
+   "left_out": "FW",
+   "n_calls_left_out": 91
+  },
+  {
+   "n_duets": 49,
+   "n_calls": 450,
+   "S_win": 1.1068853712019822,
+   "p_A": 0.0001,
+   "S_adj": 2.284702118435277,
+   "p_B": 0.0001,
+   "left_out": "LP",
+   "n_calls_left_out": 18
+  },
+  {
+   "n_duets": 50,
+   "n_calls": 447,
+   "S_win": 1.1088122395598563,
+   "p_A": 0.0001,
+   "S_adj": 2.273447819234698,
+   "p_B": 0.0001,
+   "left_out": "RC",
+   "n_calls_left_out": 21
+  },
+  {
+   "n_duets": 39,
+   "n_calls": 316,
+   "S_win": 1.3310254025816035,
+   "p_A": 0.0001,
+   "S_adj": 2.5891548787819576,
+   "p_B": 0.0001,
+   "left_out": "RW",
+   "n_calls_left_out": 152
+  },
+  {
+   "n_duets": 50,
+   "n_calls": 450,
+   "S_win": 1.0528088010464856,
+   "p_A": 0.0001,
+   "S_adj": 2.193658513892549,
+   "p_B": 0.0001,
+   "left_out": "UB",
+   "n_calls_left_out": 18
+  }
+ ],
+ "position": {
+  "obs": 2.241611024716572,
+  "null_mean": 1.9960238389779197,
+  "p": 0.0001,
+  "n_slots_permutable": 227
+ },
+ "direction": {
+  "F_to_M": {
+   "n_neighbour_pairs": 204,
+   "obs": 2.6387063715986354,
+   "null_mean": 2.1942689879067214,
+   "p": 0.0001
+  },
+  "M_to_F": {
+   "n_neighbour_pairs": 179,
+   "obs": 2.5449819611055866,
+   "null_mean": 2.29559795447641,
+   "p": 0.0001
+  }
+ },
+ "readings": {
+  "dedup": "ROBUST",
+  "lopo_B": "ROBUST",
+  "lopo_A": "ROBUST",
+  "position": "TRANSITIONS_BEYOND_POSITION",
+  "direction": "BOTH"
+ },
+ "grading": {
+  "outcomes": {
+   "R1": true,
+   "R2": true,
+   "R3": true,
+   "R4": true,
+   "R5": true,
+   "R6": true
+  },
+  "brier": 0.10916666666666665
+ }
+}

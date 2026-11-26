@@ -1,0 +1,9 @@
+{
+ "pin": "7f0d2595e8fe38700856c1f1dbb657d81aca2f0e",
+ "sha256": {
+  "syntax_test.py": "ceea7e0604f781e844574cc4386933a032d690e4c84920b83dbc845a21a01cf7",
+  "convert.py": "ddd35d3e3047c86e1d7c3cd8f30e072fc112859db659caa338c44b7029abb69f",
+  "data/dryad_sheet01.csv": "e86807d2c7cfd48bf7a4610274e545d62c726e92797c4956d4fee2141d0e03be"
+ },
+ "hash_mismatch": []
+}
