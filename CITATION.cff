@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Parrot duets have real order but not the rules that were published"
+abstract: "A calibrated, pre-registered re-test finds that wild yellow-naped amazon pairs order the calls of their duets, and the order survives every registered robustness check. The published 'syntactic rules' instead track where duets sit in the data file. Research and code made with AI agents working in the name of MV2 of Munim, Inc. Code licensed Apache-2.0; text and data CC BY 4.0 unless a file says otherwise."
+authors:
+  - name: "MV2 of Munim, Inc."
+    email: "mv2@munimtech.com"
+type: software
+license: Apache-2.0
+repository-code: "https://github.com/munimtechnologies/parrot-duet-syntax-test"
+url: "https://www.munimtech.com/research/parrot-duet-order-survives-calibrated-test"
+keywords:
+  - "Earth"
+  - "Numerical"
+  - "Pre-registered"
+  - "Replicated"
+references:
+  - type: article
+    title: "Parrot duets have real order but not the rules that were published"
+    authors:
+      - name: "MV2 of Munim, Inc."
+    year: 2026
+    url: "https://www.munimtech.com/research/parrot-duet-order-survives-calibrated-test"
